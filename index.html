@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encuesta - Instituto Tecnológico de Frontera Comalapa</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+    color: #222;
+  }
+  .container {
+    max-width: 750px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  header img {
+    height: 70px;
+    width: auto;
+    flex-shrink: 0;
+  }
+  header .titulos {
+    flex: 1;
+  }
+  header h1 {
+    font-size: 20px;
+    color: #1a3d7c;
+    margin: 4px 0;
+  }
+  .info-linea {
+    margin: 6px 0;
+    font-size: 14px;
+  }
+  .info-linea strong {
+    color: #000;
+  }
+  fieldset {
+    border: none;
+    border-top: 1px solid #eee;
+    padding: 14px 0;
+    margin: 0;
+  }
+  legend {
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0;
+    margin-bottom: 8px;
+  }
+  .opciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-left: 10px;
+  }
+  .opciones label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .opciones input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+  button {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    padding: 12px;
+    background: #1a3d7c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button:hover { background: #143063; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <!-- LOGO IZQUIERDO: asegúrate de tener img2.jpg en la misma carpeta -->
+    <img src="img2.jpg" alt="Logo Tecnológico Nacional de México">
+
+    <div class="titulos">
+      <h1>Instituto Tecnológico de Frontera Comalapa</h1>
+      <h1>Unidad Académica San Juan Cancuc</h1>
+    </div>
+
+    <!-- LOGO DERECHO: asegúrate de tener img1.webp en la misma carpeta -->
+    <img src="img1.webp" alt="Logo Unidad Académica Altos de Chiapas">
+  </header>
+
+  <div class="info-linea"><strong>Carrera:</strong> Ingeniería en Sistemas Computacionales &nbsp;&nbsp; <strong>Semestre:</strong> 2</div>
+  <div class="info-linea"><strong>Materia:</strong> Probabilidad y Estadística</div>
+
+  <!-- Formulario configurado con Netlify Forms -->
+  <form id="encuestaForm" name="encuesta-estadistica" method="POST" data-netlify="true">
+
+    <fieldset>
+      <legend>1. ¿Cuál es tu edad?</legend>
+      <div class="opciones">
+        <label><input type="radio" name="p1_edad" value="<10 años" required> &lt;10 años</label>
+        <label><input type="radio" name="p1_edad" value="10-15 años"> 10-15 años</label>
+        <label><input type="radio" name="p1_edad" value="15-20 años"> 15-20 años</label>
+        <label><input type="radio" name="p1_edad" value=">20 años"> &gt;20 años</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. ¿Cuál es tu nivel educativo?</legend>
+      <div class="opciones">
+        <label><input type="radio" name="p2_nivel_educativo" value="primaria" required> Primaria</label>
+        <label><input type="radio" name="p2_nivel_educativo" value="secundaria"> Secundaria</label>
+        <label><input type="radio" name="p2_nivel_educativo" value="preparatoria"> Preparatoria</label>
+        <label><input type="radio" name="p2_nivel_educativo" value="universidad"> Universidad</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. ¿Cuál es tu salario mensual?</legend>
+      <div class="opciones">
+        <label><input type="radio" name="p3_salario" value="<3mil" required> &lt; 3mil</label>
+        <label><input type="radio" name="p3_salario" value="3000-5000"> 3000-5000</label>
+        <label><input type="radio" name="p3_salario" value=">5000"> &gt;5000</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. ¿Cuántos integrantes conforman tu familia contándote?</legend>
+      <div class="opciones">
+        <label><input type="radio" name="p4_integrantes_familia" value="2" required> 2</label>
+        <label><input type="radio" name="p4_integrantes_familia" value="2-5"> 2-5</label>
+        <label><input type="radio" name="p4_integrantes_familia" value=">5"> &gt;5</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>5. ¿En tu familia tienes algún miembro con discapacidad?</legend>
+      <div class="opciones">
+        <label><input type="radio" name="p5_discapacidad" value="si" required> Sí</label>
+        <label><input type="radio" name="p5_discapacidad" value="no"> No</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>6. ¿De qué material está hecha tu casa?</legend>
+      <div class="opciones">
+        <label><input type="radio" name="p6_material_casa" value="block" required> Block</label>
+        <label><input type="radio" name="p6_material_casa" value="lamina"> Lámina</label>
+        <label><input type="radio" name="p6_material_casa" value="madera"> Madera</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>7. ¿Qué deporte practicas?</legend>
+      <div class="opciones">
+        <label><input type="radio" name="p7_deporte" value="basquetbol" required> Básquetbol</label>
+        <label><input type="radio" name="p7_deporte" value="futbol"> Futbol</label>
+        <label><input type="radio" name="p7_deporte" value="ninguno"> Ninguno</label>
+        <label><input type="radio" name="p7_deporte" value="otro"> Otro</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>8. ¿Cuál es tu estado civil?</legend>
+      <div class="opciones">
+        <label><input type="radio" name="p8_estado_civil" value="soltero" required> Soltero</label>
+        <label><input type="radio" name="p8_estado_civil" value="casado"> Casado</label>
+        <label><input type="radio" name="p8_estado_civil" value="union_libre"> Unión libre</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>9. ¿Hablas algún otro idioma?</legend>
+      <div class="opciones">
+        <label><input type="radio" name="p9_idioma" value="tzeltal" required> Tzeltal</label>
+        <label><input type="radio" name="p9_idioma" value="español"> Español</label>
+        <label><input type="radio" name="p9_idioma" value="ambos"> Ambos</label>
+        <label><input type="radio" name="p9_idioma" value="otro"> Otro</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>10. ¿Qué tan fácil o difícil es continuar con tus estudios?</legend>
+      <div class="opciones">
+        <label><input type="radio" name="p10_dificultad_estudios" value="muy_facil" required> Muy fácil</label>
+        <label><input type="radio" name="p10_dificultad_estudios" value="facil"> Fácil</label>
+        <label><input type="radio" name="p10_dificultad_estudios" value="dificil"> Difícil</label>
+        <label><input type="radio" name="p10_dificultad_estudios" value="muy_dificil"> Muy difícil</label>
+      </div>
+    </fieldset>
+
+    <button type="submit">Enviar encuesta</button>
+  </form>
+</div>
+
+</body>
+</html>
